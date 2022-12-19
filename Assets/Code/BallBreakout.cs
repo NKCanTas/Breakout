@@ -77,12 +77,17 @@ public class BallBreakout : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        transform.position = Vector3.zero;
 
-        rb.velocity = (Vector2.up + Vector2.up + Vector2.right) * speed;
+        if (col.gameObject.CompareTag("Deathzone"))
+        {
+            transform.position = Vector3.zero;
+
+            rb.velocity = (Vector2.up + Vector2.up + Vector2.right) * speed;
         
-        //if Befehl machen, der bei 3 mal den Trigger begeht das Spiel zurücksetzen (Z.30)
+            //if Befehl machen, der bei 3 mal den Trigger begeht das Spiel zurücksetzen (Z.30)
 
-        //OnGameStateChanged(GameStateManager.GameState.lose);
+            //OnGameStateChanged(GameStateManager.GameState.lose);
+        }
+       
     }
 }

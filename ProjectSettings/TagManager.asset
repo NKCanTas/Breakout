@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Brick
   - Ball
+  - Deathzone
+  - Obstacle
   layers:
   - Default
   - TransparentFX
