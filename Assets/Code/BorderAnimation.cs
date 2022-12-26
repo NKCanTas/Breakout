@@ -9,7 +9,7 @@ public class BorderAnimation : MonoBehaviour
     
     private void Awake()
     {
-        animationBorder = GetComponent<Animation>();
+        animationBorder = GetComponentInParent<Animation>();
     }
 
     private void OnCollisionEnter2D(Collision2D col)

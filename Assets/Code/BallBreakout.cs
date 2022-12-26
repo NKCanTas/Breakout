@@ -1,7 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Random = UnityEngine.Random;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class BallBreakout : MonoBehaviour
 {
@@ -14,8 +18,9 @@ public class BallBreakout : MonoBehaviour
 
     //private float bouncefromBrick = 3f;
     private float speed = 2f;
-    
-    
+    private float movespeed = 10f;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -52,10 +57,20 @@ public class BallBreakout : MonoBehaviour
             default: break;
         }
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetAxis("Jump") != 0)
+        {
+            rb.velocity = (Vector2.up + (Vector2.right * Random.Range(-1, 1))) * speed;
+        }
+
+    }
+
+
     void Start()
     {
-        rb.velocity = (Vector2.up + Vector2.up + Vector2.right) * speed;
+        Update();
         OnGameStateChanged(GameStateManager.GameState.playing);
     }
 
@@ -82,7 +97,7 @@ public class BallBreakout : MonoBehaviour
         {
             transform.position = Vector3.zero;
 
-            rb.velocity = (Vector2.up + Vector2.up + Vector2.right) * speed;
+            rb.velocity = (Vector2.up + (Vector2.right * Random.Range(-1, 1))) * speed;
         
             //if Befehl machen, der bei 3 mal den Trigger begeht das Spiel zurücksetzen (Z.30)
 

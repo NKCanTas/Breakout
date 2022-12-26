@@ -22,7 +22,7 @@ PrefabInstance:
     - target: {fileID: 31321802, guid: 8176405c71d6bae458246aa84a1ea2fa, type: 3}
       propertyPath: brickPrefab
       value: 
-      objectReference: {fileID: 8904144382022960248, guid: bf7f9bceafbe161429cb8422a5c5589e, type: 3}
+      objectReference: {fileID: 1415511431099472363, guid: bb9f686e5f37eeb43897f9cd6b11ba52, type: 3}
     - target: {fileID: 31321802, guid: 8176405c71d6bae458246aa84a1ea2fa, type: 3}
       propertyPath: verticalMargin
       value: 1
