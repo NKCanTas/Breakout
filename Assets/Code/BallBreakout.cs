@@ -62,11 +62,14 @@ public class BallBreakout : MonoBehaviour
     {
         if (Input.GetAxis("Jump") != 0)
         {
-            rb.velocity = (Vector2.up + (Vector2.right * Random.Range(-1, 1))) * speed;
+            rb.velocity = (Vector2.up + Vector2.up + (Vector2.right * Random.Range(-1, 1))) * speed;
+
+            if (Random.Range(-1, 1) == 0)
+            {
+                rb.velocity = (Vector2.up + Vector2.up) * speed; 
+            }
         }
-
     }
-
 
     void Start()
     {
