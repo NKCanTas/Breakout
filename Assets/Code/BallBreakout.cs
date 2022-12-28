@@ -98,9 +98,14 @@ public class BallBreakout : MonoBehaviour
 
         if (col.gameObject.CompareTag("Deathzone"))
         {
-            transform.position = Vector3.zero;
+            transform.position = Vector3.down + Vector3.down + Vector3.down;
 
-            rb.velocity = (Vector2.up + (Vector2.right * Random.Range(-1, 1))) * speed;
+            rb.velocity = (Vector2.up +  Vector2.up + (Vector2.right * Random.Range(-1, 1))) * speed;
+            
+            if (Random.Range(-1, 1) == 0)
+            {
+                rb.velocity = (Vector2.up + Vector2.up) * speed; 
+            }
         
             //if Befehl machen, der bei 3 mal den Trigger begeht das Spiel zurücksetzen (Z.30)
 
