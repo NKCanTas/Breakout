@@ -18,7 +18,6 @@ public class BallBreakout : MonoBehaviour
 
     //private float bouncefromBrick = 3f;
     private float speed = 2f;
-    private float movespeed = 10f;
 
 
     private void Awake()
